@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Portfolio | Nguyễn Thị Đan Linh</title>
+    <title>Nguyễn Thị Đan Linh Portfolio</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -12,15 +12,15 @@
     <style>
         /* --- CSS VARIABLES & THEME --- */
         :root {
-            --bg-overlay: rgba(18, 25, 23, 0.82);
-            --glass-bg: rgba(28, 38, 35, 0.7);
+            --bg-overlay: rgba(15, 22, 20, 0.85);
+            --glass-bg: rgba(24, 34, 30, 0.75);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-primary: #f4f7f5;
-            --text-secondary: #b1beba;
+            --text-secondary: #afbcba;
             --accent-gold: #dfb15b;
             --accent-mint: #82bda3;
-            --accent-glow: rgba(130, 189, 163, 0.3);
-            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --accent-glow: rgba(130, 189, 163, 0.25);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* --- BASIC RESET & GLOBAL --- */
@@ -41,7 +41,6 @@
             position: relative;
         }
 
-        /* Ambient Dreamy Overlay over back.jpg */
         body::before {
             content: '';
             position: fixed;
@@ -49,19 +48,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 30%, rgba(130, 189, 163, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(223, 177, 91, 0.1), transparent 50%),
+            background: radial-gradient(circle at 15% 15%, rgba(130, 189, 163, 0.18), transparent 45%),
+                        radial-gradient(circle at 85% 85%, rgba(223, 177, 91, 0.12), transparent 45%),
                         var(--bg-overlay);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* --- SCROLLBAR --- */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(18, 25, 23, 0.5);
+            background: rgba(15, 22, 20, 0.5);
         }
         ::-webkit-scrollbar-thumb {
             background: var(--accent-mint);
@@ -82,13 +80,13 @@
         .glow-bubble {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            animation: floatBubble 25s infinite alternate ease-in-out;
+            filter: blur(100px);
+            opacity: 0.25;
+            animation: floatBubble 20s infinite alternate ease-in-out;
         }
         @keyframes floatBubble {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 150px) scale(1.3); }
+            100% { transform: translate(80px, 120px) scale(1.25); }
         }
 
         /* --- NAVIGATION BAR --- */
@@ -99,7 +97,7 @@
             width: 100%;
             padding: 20px 8%;
             z-index: 1000;
-            background: rgba(18, 25, 23, 0.4);
+            background: rgba(15, 22, 20, 0.4);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--glass-border);
             display: flex;
@@ -109,7 +107,7 @@
         }
         header.scrolled {
             padding: 12px 8%;
-            background: rgba(18, 25, 23, 0.85);
+            background: rgba(15, 22, 20, 0.9);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .logo {
@@ -134,10 +132,10 @@
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: var(--transition-smooth);
             position: relative;
         }
@@ -161,22 +159,17 @@
             padding: 10px 20px;
             border-radius: 30px;
             background: linear-gradient(135deg, var(--accent-mint), rgba(130, 189, 163, 0.5));
-            color: #121917;
+            color: #0f1614;
             font-weight: 600;
-            text-transform: none;
-            letter-spacing: 0;
-            border: 1px solid transparent;
-            box-shadow: 0 4px 15px var(--accent-glow);
+            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: var(--transition-smooth);
         }
         .btn-drive-header:hover {
             transform: translateY(-2px);
-            background: transparent;
-            color: var(--accent-mint);
-            border-color: var(--accent-mint);
-            box-shadow: 0 6px 20px var(--accent-glow);
+            box-shadow: 0 5px 15px var(--accent-glow);
         }
 
         /* --- HERO SECTION --- */
@@ -192,8 +185,8 @@
             width: 100%;
             max-width: 1200px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 60px;
             align-items: center;
         }
         .hero-content {
@@ -210,29 +203,27 @@
         }
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 58px;
+            font-size: 64px;
             font-weight: 700;
-            line-height: 1.15;
-            background: linear-gradient(120deg, var(--text-primary) 40%, var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            color: var(--text-primary);
         }
         .hero-desc {
             color: var(--text-secondary);
             font-size: 16px;
-            line-height: 1.7;
-            max-width: 580px;
+            line-height: 1.8;
+            max-width: 620px;
         }
         .student-meta {
-            margin-top: 15px;
-            padding: 20px;
+            margin-top: 10px;
+            padding: 24px;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         .meta-item {
@@ -247,7 +238,7 @@
             text-align: center;
         }
         .meta-item span {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
         }
         .meta-item strong {
@@ -265,37 +256,90 @@
             border-radius: 50%;
             padding: 10px;
             background: linear-gradient(45deg, var(--accent-mint), var(--accent-gold));
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             position: relative;
             animation: gentleFloat 6s infinite alternate ease-in-out;
         }
         @keyframes gentleFloat {
             0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(-12px) rotate(1.5deg); }
         }
         .avatar-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #1a2421;
+            border: 5px solid #141c19;
         }
         .avatar-glow {
             position: absolute;
             top: -10px; left: -10px; right: -10px; bottom: -10px;
             border-radius: 50%;
             background: linear-gradient(45deg, var(--accent-mint), var(--accent-gold));
-            filter: blur(20px);
-            opacity: 0.4;
+            filter: blur(25px);
+            opacity: 0.35;
             z-index: -1;
+        }
+
+        /* --- PORTFOLIO OVERVIEW SECTION --- */
+        .overview-section {
+            background: rgba(18, 26, 23, 0.6);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 80px 8%;
+        }
+        .overview-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+        }
+        .overview-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            border-radius: 24px;
+        }
+        .overview-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .overview-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .overview-list li {
+            position: relative;
+            padding-left: 25px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .overview-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-mint);
         }
 
         /* --- PRE-PORTFOLIO DRIVE BANNER --- */
         .drive-banner {
             max-width: 1200px;
-            margin: 0 auto 60px;
+            margin: 80px auto 40px;
             padding: 40px;
-            background: linear-gradient(135deg, rgba(28, 38, 35, 0.9), rgba(18, 25, 23, 0.9));
+            background: linear-gradient(135deg, rgba(28, 38, 35, 0.95), rgba(18, 25, 23, 0.95));
             border: 1px solid var(--glass-border);
             border-radius: 24px;
             backdrop-filter: blur(20px);
@@ -304,16 +348,6 @@
             justify-content: space-between;
             gap: 30px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .drive-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(130, 189, 163, 0.08) 0%, transparent 60%);
-            pointer-events: none;
         }
         .drive-banner-text h3 {
             font-family: 'Playfair Display', serif;
@@ -330,7 +364,7 @@
             padding: 16px 32px;
             border-radius: 50px;
             background: linear-gradient(135deg, var(--accent-gold), #b38531);
-            color: #121917;
+            color: #0f1614;
             font-weight: 700;
             text-decoration: none;
             display: flex;
@@ -398,6 +432,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            cursor: pointer;
         }
         .exercise-card::before {
             content: '';
@@ -409,7 +444,7 @@
             transition: var(--transition-smooth);
         }
         .exercise-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: rgba(130, 189, 163, 0.3);
             box-shadow: 0 20px 45px rgba(0,0,0,0.25);
         }
@@ -420,7 +455,7 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 48px;
-            color: rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.04);
             position: absolute;
             top: 15px;
             right: 25px;
@@ -428,7 +463,7 @@
             transition: var(--transition-smooth);
         }
         .exercise-card:hover .ex-number {
-            color: rgba(130, 189, 163, 0.12);
+            color: rgba(130, 189, 163, 0.1);
             transform: scale(1.1);
         }
         .ex-icon {
@@ -446,7 +481,7 @@
         }
         .exercise-card:hover .ex-icon {
             background: var(--accent-mint);
-            color: #121917;
+            color: #0f1614;
             box-shadow: 0 8px 20px var(--accent-glow);
         }
         .ex-title {
@@ -489,7 +524,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(10, 15, 14, 0.92);
+            background: rgba(8, 12, 10, 0.94);
             backdrop-filter: blur(12px);
             z-index: 2000;
             display: flex;
@@ -504,11 +539,11 @@
         }
         .modal-panel {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             height: 100%;
-            background: #141c19;
+            background: #111816;
             border-left: 1px solid var(--glass-border);
-            padding: 50px 40px;
+            padding: 50px 45px;
             overflow-y: auto;
             transform: translateX(100%);
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -533,6 +568,7 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition-smooth);
+            z-index: 10;
         }
         .modal-close:hover {
             background: rgba(235, 94, 85, 0.2);
@@ -570,59 +606,192 @@
         .modal-body h4 {
             font-family: 'Playfair Display', serif;
             font-size: 20px;
-            color: var(--text-primary);
-            margin: 30px 0 15px;
+            color: var(--accent-gold);
+            margin: 35px 0 15px;
             border-left: 3px solid var(--accent-mint);
             padding-left: 15px;
         }
 
         /* --- DEEP INTERACTIVE SUB-COMPONENTS FOR MODALS --- */
         
-        /* File Tree representation (Task 1) */
-        .file-tree {
-            background: #1b2421;
-            padding: 20px;
-            border-radius: 12px;
-            font-family: monospace;
-            font-size: 14px;
-            margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.05);
+        /* Interactive File Explorer Component (Task 1) */
+        .interactive-explorer {
+            background: #151d1a;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 25px 0;
         }
-        .tree-item {
-            margin-left: 20px;
-            position: relative;
-        }
-        .tree-item::before {
-            content: "├── ";
-            color: var(--accent-mint);
-        }
-        .tree-folder {
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-        .tree-file {
+        .explorer-header {
+            background: rgba(0,0,0,0.3);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
             color: var(--text-secondary);
         }
-
-        /* Harvard Reference Box (Task 2) */
-        .ref-box {
-            background: #1a2321;
-            border-left: 3px solid var(--accent-mint);
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 0 12px 12px 0;
+        .explorer-body {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            height: 350px;
         }
-        .ref-title {
-            font-weight: bold;
-            color: var(--text-primary);
-        }
-        .ref-meta {
+        .explorer-sidebar {
+            background: rgba(0,0,0,0.15);
+            border-right: 1px solid rgba(255,255,255,0.05);
+            padding: 15px;
             font-size: 13.5px;
+        }
+        .explorer-nav-item {
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .explorer-nav-item.active {
+            background: rgba(130, 189, 163, 0.15);
+            color: var(--accent-mint);
+        }
+        .explorer-content {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .explorer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 15px;
+        }
+        .explorer-item-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+        .explorer-item-node:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: rgba(255,255,255,0.05);
+        }
+        .explorer-item-node i {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .explorer-item-node.folder i {
             color: var(--accent-gold);
-            margin-top: 5px;
+        }
+        .explorer-item-node.file i {
+            color: var(--text-secondary);
+        }
+        .explorer-item-node span {
+            font-size: 12px;
+            word-break: break-all;
+            line-height: 1.3;
         }
 
-        /* Prompt Engineering Comparison Simulator (Task 3) */
+        /* 12 Steps Progress tracker for Task 1 */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        .step-node {
+            display: flex;
+            gap: 15px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            padding: 15px 20px;
+            border-radius: 12px;
+        }
+        .step-badge {
+            background: var(--accent-mint);
+            color: #0f1614;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .step-details h5 {
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .step-details p {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Interactive Reference Table (Task 2) */
+        .ref-interactive-list {
+            margin: 25px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .ref-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+        .ref-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: var(--accent-mint);
+        }
+        .ref-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ref-cite {
+            font-size: 14.5px;
+            color: var(--text-primary);
+            padding-right: 20px;
+        }
+        .ref-badge {
+            background: rgba(130, 189, 163, 0.15);
+            color: var(--accent-mint);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .ref-dropdown-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            background: rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .ref-dropdown-details p {
+            margin-bottom: 8px;
+        }
+        .ref-dropdown-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Interactive Prompt Engineering Simulator (Task 3) */
         .prompt-simulator {
             margin: 30px 0;
             background: #101715;
@@ -630,51 +799,81 @@
             border-radius: 16px;
             overflow: hidden;
         }
-        .sim-tabs {
+        .sim-task-selector {
             display: flex;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.3);
             border-bottom: 1px solid var(--glass-border);
         }
-        .sim-tab-btn {
+        .sim-task-btn {
             flex: 1;
             padding: 15px;
             border: none;
             background: transparent;
             color: var(--text-secondary);
             font-family: inherit;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition-smooth);
         }
-        .sim-tab-btn.active {
-            background: var(--glass-bg);
+        .sim-task-btn.active {
             color: var(--accent-mint);
+            background: rgba(130, 189, 163, 0.08);
             border-bottom: 2px solid var(--accent-mint);
         }
-        .sim-content {
+        .sim-level-selector {
+            display: flex;
+            background: rgba(0,0,0,0.15);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .sim-level-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .sim-level-btn.active {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+        .sim-output-box {
             padding: 25px;
-            display: none;
+            min-height: 200px;
         }
-        .sim-content.active {
-            display: block;
-        }
-        .prompt-text {
+        .sim-prompt-display {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.05);
             padding: 15px;
             border-radius: 10px;
             font-style: italic;
             margin-bottom: 15px;
-            position: relative;
         }
-        .prompt-text::before {
+        .sim-prompt-display::before {
             content: "Prompt:";
             display: block;
             font-size: 11px;
             text-transform: uppercase;
             color: var(--accent-mint);
             margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .sim-ai-display {
+            padding: 10px;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+        .sim-ai-display::before {
+            content: "AI Output:";
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
@@ -707,6 +906,93 @@
             font-size: 13px;
             border-left: 3px solid var(--accent-gold);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .kanban-card:hover {
+            transform: translateX(3px);
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* Interactive Hawaii Infographic Preview (Task 5) */
+        .infographic-mockup {
+            background: #121917;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+        .mockup-visual {
+            background: linear-gradient(135deg, #dfb15b20, #82bda320);
+            border: 1px dashed var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        .mockup-tab-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .mockup-tab-btn {
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-align: left;
+            transition: var(--transition-smooth);
+        }
+        .mockup-tab-btn.active {
+            background: rgba(130, 189, 163, 0.12);
+            border-color: var(--accent-mint);
+            color: var(--accent-mint);
+        }
+
+        /* Interactive Survey Clean-up Tool (Task 6) */
+        .survey-cleanup {
+            margin: 25px 0;
+            background: #101715;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+        .cleanup-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cleanup-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.02);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: bold;
+        }
+        .cleanup-btn.active {
+            background: rgba(223, 177, 91, 0.15);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        .cleanup-content-area {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* Evaluation Table (Task 2 & 5) */
@@ -754,7 +1040,7 @@
         /* --- CONTACT SECTION & FOOTER --- */
         .contact {
             text-align: center;
-            background: rgba(18, 25, 23, 0.5);
+            background: rgba(15, 22, 20, 0.5);
             backdrop-filter: blur(15px);
             border-top: 1px solid var(--glass-border);
             padding: 80px 8%;
@@ -781,7 +1067,7 @@
         }
         .social-icon:hover {
             background: var(--accent-mint);
-            color: #121917;
+            color: #0f1614;
             transform: scale(1.1) translateY(-3px);
             box-shadow: 0 5px 15px var(--accent-glow);
         }
@@ -805,6 +1091,9 @@
             .hero-image-wrapper {
                 order: 1;
             }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
             .drive-banner {
                 flex-direction: column;
                 text-align: center;
@@ -814,13 +1103,13 @@
                 justify-content: center;
             }
             nav {
-                display: none; /* Can build a simple menu toggler but keeping it single file simple */
+                display: none;
             }
         }
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 40px;
+                font-size: 44px;
             }
             .student-meta {
                 grid-template-columns: 1fr;
@@ -829,6 +1118,9 @@
                 grid-template-columns: 1fr;
             }
             .kanban-preview {
+                grid-template-columns: 1fr;
+            }
+            .infographic-mockup {
                 grid-template-columns: 1fr;
             }
             .modal-panel {
@@ -841,8 +1133,8 @@
 
     <!-- Ambient Glowing Backdrops -->
     <div class="ambient-glows">
-        <div class="glow-bubble" style="width: 400px; height: 400px; background: var(--accent-mint); top: 10%; left: -10%;"></div>
-        <div class="glow-bubble" style="width: 300px; height: 300px; background: var(--accent-gold); bottom: 15%; right: -5%;"></div>
+        <div class="glow-bubble" style="width: 450px; height: 450px; background: var(--accent-mint); top: 8%; left: -12%;"></div>
+        <div class="glow-bubble" style="width: 320px; height: 320px; background: var(--accent-gold); bottom: 12%; right: -6%;"></div>
     </div>
 
     <!-- Header Navigation -->
@@ -853,27 +1145,28 @@
         </a>
         <nav>
             <a href="#about" class="active">Giới Thiệu</a>
-            <a href="#tasks">Học Phần Thực Hành</a>
+            <a href="#overview">Tổng Kết</a>
+            <a href="#tasks">Dự Án</a>
             <a href="https://drive.google.com/drive/folders/1AIuYwtgiAQZD5E-zliBMQtfNmvceI3By?usp=drive_link" target="_blank" class="btn-drive-header">
                 <i class="fa-brands fa-google-drive"></i> Xem bài tập trên GG drive
             </a>
         </nav>
     </header>
 
-    <!-- Hero / About Section -->
+    <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-container">
             <div class="hero-content">
                 <span class="hero-sub">Digital Portfolio</span>
-                <h1 class="hero-title">Xin chào, tôi là Đan Linh.</h1>
+                <h1 class="hero-title">Nguyễn Thị Đan Linh</h1>
                 <p class="hero-desc">
-                    Sinh viên ngành Ngôn ngữ và Văn hóa Anh. Đây là nơi tôi lưu giữ những bước chân đầu tiên trong hành trình ứng dụng Công nghệ số vào công việc và học thuật. Không chỉ dừng lại ở lý thuyết khô cứng, mỗi bài học tại đây là một trải nghiệm mở rộng thế giới quan của bản thân [2, 3].
+                    Sinh viên ngành Ngôn ngữ và Văn hóa Anh. Trang thông tin này được xây dựng nhằm phản ánh quá trình tiếp cận, rèn luyện kỹ năng công nghệ số và ứng dụng Trí tuệ nhân tạo một cách thực tế, bài bản trong môi trường học thuật của tôi [1, 2, 3].
                 </p>
                 
                 <div class="student-meta">
                     <div class="meta-item">
                         <i class="fa-solid fa-signature"></i>
-                        <span>Tên sinh viên:<strong>Nguyễn Thị Đan Linh</strong></span>
+                        <span>Họ và tên:<strong>Nguyễn Thị Đan Linh</strong></span>
                     </div>
                     <div class="meta-item">
                         <i class="fa-solid fa-id-card"></i>
@@ -881,11 +1174,11 @@
                     </div>
                     <div class="meta-item">
                         <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Chuyên ngành:<strong>Ngôn ngữ & Văn hóa Anh</strong></span>
+                        <span>Khoa:<strong>Khoa Ngôn ngữ & Văn hóa Anh</strong></span>
                     </div>
                     <div class="meta-item">
                         <i class="fa-solid fa-school"></i>
-                        <span>Trường:<strong>Đại học Ngoại ngữ - ĐHQGHN</strong></span>
+                        <span>Học viện/Trường:<strong>Đại học Ngoại ngữ - ĐHQGHN</strong></span>
                     </div>
                 </div>
             </div>
@@ -899,11 +1192,31 @@
         </div>
     </section>
 
-    <!-- Interactive Drive Banner (Placed before the tasks section as requested) -->
+    <!-- Portfolio Overview Section -->
+    <section class="overview-section" id="overview">
+        <div class="overview-grid">
+            <div class="overview-box">
+                <h3><i class="fa-solid fa-bullseye"></i> Mục Tiêu Portfolio</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 15px;">
+                    Hồ sơ năng lực số này không chỉ đóng vai trò là một học phần học tập thông thường, mà còn là công cụ trực quan hóa năng lực của bản thân trong việc phân tích thông tin, tư duy phản biện, phối hợp nhóm trực tuyến và tích hợp các giải pháp AI thế hệ mới (GenAI) vào học thuật một cách minh bạch, có kiểm soát [3].
+                </p>
+            </div>
+            <div class="overview-box">
+                <h3><i class="fa-solid fa-square-poll-vertical"></i> Tổng Kết Quá Trình</h3>
+                <ul class="overview-list">
+                    <li><strong>Thuận lợi:</strong> Làm quen nhanh với các công cụ tạo sinh nhờ giao diện trực quan; tối ưu hóa tới 60% thời gian nghiên cứu và xây dựng cấu trúc học tập nền tảng [3].</li>
+                    <li><strong>Khó khăn:</strong> Thách thức lớn trong việc lọc ảo giác của AI (như các tài liệu tham khảo giả); rủi ro đồng bộ thông tin và quản trị tiến độ khi làm việc nhóm từ xa [3].</li>
+                    <li><strong>Bài học kinh nghiệm:</strong> Luôn tuân thủ nguyên tắc "Tư duy đi trước, Công cụ theo sau" [3]. Con người đóng vai trò biên tập và đưa bản sắc cá nhân vào kết quả cuối cùng để đảm bảo tính liêm chính học thuật [3].</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Portfolio Drive Banner -->
     <div class="drive-banner">
         <div class="drive-banner-text">
-            <h3>Kho Lưu Trữ Học Tập Trực Tuyến</h3>
-            <p>Toàn bộ tài liệu báo cáo, đề tài nghiên cứu chi tiết và các sơ đồ Infographics được phân loại khoa học trên Google Drive cá nhân của tôi [2, 3].</p>
+            <h3>Kho Dữ Liệu Thực Hành Học Thuật</h3>
+            <p>Bao gồm toàn bộ các tệp thực hành, báo cáo phân tích và Infographics nguyên bản được sắp xếp và lưu trữ an toàn trên Google Drive cá nhân của tôi [1, 2, 3].</p>
         </div>
         <a href="https://drive.google.com/drive/folders/1AIuYwtgiAQZD5E-zliBMQtfNmvceI3By?usp=drive_link" target="_blank" class="btn-drive-large">
             <i class="fa-brands fa-google-drive"></i> Xem bài tập trên GG drive
@@ -913,8 +1226,8 @@
     <!-- Portfolio Exercises Grid -->
     <section id="tasks">
         <div class="section-header">
-            <span class="section-tag">Hành Trình Chinh Phục</span>
-            <h2 class="section-title">Các Dự Án Thực Hành Số</h2>
+            <span class="section-tag">Nội Dung Thực Hành</span>
+            <h2 class="section-title">Học Phần Thực Hành Số Chi Tiết</h2>
             <div class="section-line"></div>
         </div>
 
@@ -925,10 +1238,10 @@
                 <span class="ex-number">01</span>
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-folder-open"></i></div>
-                    <h3 class="ex-title">Thao Tác Thư Mục & Tệp Tin</h3>
-                    <p class="ex-desc">Làm chủ hệ điều hành và tổ chức không gian lưu trữ khoa học qua chuỗi thao tác quản lý dữ liệu số hóa căn bản [1].</p>
+                    <h3 class="ex-title">Thao Tác Tệp Tin & Thư Mục</h3>
+                    <p class="ex-desc">Khám phá và làm chủ quy trình tổ chức dữ liệu máy tính cá nhân thông qua 12 bước thao tác quản lý tệp tin một cách khoa học [1].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <!-- CARD 2 -->
@@ -936,10 +1249,10 @@
                 <span class="ex-number">02</span>
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <h3 class="ex-title">Đánh Giá Nguồn Học Thuật</h3>
-                    <p class="ex-desc">Khám phá và chọn lọc tài liệu chất lượng về đề tài "Ứng dụng IoT trong Đô thị thông minh" theo tiêu chuẩn khoa học quốc tế [2].</p>
+                    <h3 class="ex-title">Tìm Kiếm & Đánh Giá Học Thuật</h3>
+                    <p class="ex-desc">Hệ thống hóa danh mục 10 nguồn tài liệu chuẩn Harvard về "Ứng dụng IoT trong Smart City" và đánh giá mức độ tin cậy [2].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <!-- CARD 3 -->
@@ -947,10 +1260,10 @@
                 <span class="ex-number">03</span>
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-terminal"></i></div>
-                    <h3 class="ex-title">Kỹ Thuật Viết Prompt</h3>
-                    <p class="ex-desc">Xây dựng hệ thống câu lệnh phân tầng (Basic, Improved, Advanced) để tương tác hiệu quả vượt trội với AI trong học tập [3].</p>
+                    <h3 class="ex-title">Kỹ Thuật Viết Prompt Hiệu Quả</h3>
+                    <p class="ex-desc">Xây dựng và so sánh sự tiến hóa của câu lệnh (Prompt) đối với các tác vụ tóm tắt bài báo, giải nghĩa khái niệm và tạo câu hỏi [3].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <!-- CARD 4 -->
@@ -958,10 +1271,10 @@
                 <span class="ex-number">04</span>
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-users-gear"></i></div>
-                    <h3 class="ex-title">Hợp Tác Trực Tuyến</h3>
-                    <p class="ex-desc">Cách tôi ứng dụng Trello, Google Docs & Drive để xây dựng mô hình làm việc nhóm từ xa tinh gọn và tối ưu năng suất [3].</p>
+                    <h3 class="ex-title">Hợp Tác Trực Tuyến Trong Dự Án</h3>
+                    <p class="ex-desc">Cách thức vận dụng linh hoạt Trello, Google Docs & Drive để phân hóa nhiệm vụ nhóm và tháo gỡ rào cản tiến độ thực tế [3].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <!-- CARD 5 -->
@@ -969,10 +1282,10 @@
                 <span class="ex-number">05</span>
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3 class="ex-title">Sáng Tạo Nội Dung Với AI</h3>
-                    <p class="ex-desc">Phối hợp nhịp nhàng giữa ChatGPT, Gemini & Canva để phác thảo và hoàn thiện Infographic văn hóa vùng Hawaii sống động [3].</p>
+                    <h3 class="ex-title">Sáng Tạo Nội Dung Cùng AI</h3>
+                    <p class="ex-desc">Phối hợp nhịp nhàng giữa ChatGPT, Gemini và Canva để thiết kế Infographic văn hóa Hawaii và kiểm duyệt độ chính xác [3].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <!-- CARD 6 -->
@@ -981,9 +1294,9 @@
                 <div>
                     <div class="ex-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3 class="ex-title">Sử Dụng AI Có Trách Nhiệm</h3>
-                    <p class="ex-desc">Xây dựng quy tắc ứng xử học thuật, nghiên cứu chính sách AI của VNU và phát triển đề cương khảo sát Nghị định 116 bài bản [3].</p>
+                    <p class="ex-desc">Phân tích ranh giới liêm chính học thuật, nghiên cứu chính sách VNU và thực hành thiết kế bảng khảo sát Nghị định 116 bài bản [3].</p>
                 </div>
-                <button class="btn-view-detail">Tìm hiểu sâu hơn <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn-view-detail">Xem chi tiết & Minh họa <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
         </div>
@@ -994,16 +1307,16 @@
         <div class="modal-panel" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
             <div id="modalContent">
-                <!-- Loaded dynamically by JS -->
+                <!-- Content injected dynamically -->
             </div>
         </div>
     </div>
 
-    <!-- Contact & Footer -->
+    <!-- Footer -->
     <section class="contact">
-        <h2 class="section-title">Kết Nối Với Tôi</h2>
+        <h2 class="section-title">Nguyễn Thị Đan Linh</h2>
         <p style="color: var(--text-secondary); max-width: 600px; margin: 15px auto 0; line-height: 1.6;">
-            Cảm ơn bạn đã ghé thăm không gian số của tôi. Hãy cùng tôi xây dựng cộng đồng học tập thông minh và sáng tạo.
+            Khoa Ngôn ngữ và Văn hóa Anh - Trường Đại học Ngoại ngữ, Đại học Quốc gia Hà Nội.
         </p>
         <div class="footer-socials">
             <a href="mailto:danlinh@example.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
@@ -1013,9 +1326,9 @@
         <p class="footer-copyright">&copy; 2026 Nguyễn Thị Đan Linh. Thiết kế với tinh thần mộng mơ & học thuật thực tế [1, 2, 3].</p>
     </section>
 
-    <!-- JS Handling Interactivity & Custom Data Loading -->
+    <!-- JS Handling Dynamic Modals and Interactive Widgets -->
     <script>
-        // Smooth header shadow transition on scroll
+        // Smooth header animation
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -1025,252 +1338,779 @@
             }
         });
 
-        // Task Content Database - Highly descriptive, engaging, & natural
-        const taskDatabase = {
-            1: {
-                tag: "Bài tập thực hành 1",
-                title: "Thao Tác Thư Mục & Tệp Tin Trên Hệ Điều Hành",
-                body: `
-                    <p>Trong thời đại số hóa, sự thành công của một người làm học thuật hay công nghệ bắt nguồn từ việc quản lý không gian làm việc. Bài thực hành đầu tiên này giúp tôi rèn luyện thói quen tổ chức tập tin khoa học ngay trên máy tính của mình [1].</p>
-                    
-                    <h4>Cấu trúc thư mục tôi đã thiết lập:</h4>
-                    <div class="file-tree">
-                        <span class="tree-folder">Local Disk (D:)</span><br>
-                        <div class="tree-item"><span class="tree-folder">ThucHanh_NguyenThiDanLinh</span></div>
-                        <div class="tree-item" style="margin-left: 40px;"><span class="tree-folder">TaiLieu</span></div>
-                        <div class="tree-item" style="margin-left: 60px;"><span class="tree-file">DiChuyen.txt</span></div>
-                        <div class="tree-item" style="margin-left: 60px;"><span class="tree-file">GhiChuQuanTrong.txt</span> (Bản sao)</div>
-                    </div>
+        // Interactive states for widgets
+        let currentFolderLoc = 'D:';
+        let recycleBinFiles = [];
 
-                    <h4>Những trải nghiệm & bài học rút ra:</h4>
-                    <p>Tôi đã lần lượt thực hành toàn bộ chu kỳ sống của một tệp tin: Từ việc khởi tạo, viết nội dung nháp, phân quyền, đổi tên, sao chép tệp giữa các thư mục cha và con cho đến việc quản lý thùng rác (Recycle bin) để phục hồi hoặc xóa vĩnh viễn dữ liệu không mong muốn [1].</p>
-                    <p><strong>Rút ra:</strong> Sắp xếp dữ liệu lộn xộn sẽ giết chết thời gian làm việc. Chỉ một thao tác chia nhỏ thư mục theo dự án và đặt tên theo chuẩn chung đã giúp tôi định vị tệp tin chỉ trong 3 giây [1].</p>
-                `
+        function updateExplorerUI() {
+            const grid = document.getElementById('explorer-dynamic-grid');
+            if (!grid) return;
+            
+            if (currentFolderLoc === 'D:') {
+                grid.innerHTML = `
+                    <div class="explorer-item-node folder" onclick="navigateExplorer('ThucHanh')">
+                        <i class="fa-solid fa-folder"></i>
+                        <span>ThucHanh_NguyenThiDanLinh</span>
+                    </div>
+                `;
+            } else if (currentFolderLoc === 'ThucHanh') {
+                grid.innerHTML = `
+                    <div class="explorer-item-node folder" onclick="navigateExplorer('TaiLieu')">
+                        <i class="fa-solid fa-folder"></i>
+                        <span>TaiLieu</span>
+                    </div>
+                `;
+            } else if (currentFolderLoc === 'TaiLieu') {
+                let html = '';
+                if (!recycleBinFiles.includes('GhiChuQuanTrong.txt')) {
+                    html += `
+                        <div class="explorer-item-node file" onclick="triggerFileAction('GhiChu')">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>GhiChuQuanTrong.txt</span>
+                        </div>
+                    `;
+                }
+                if (!recycleBinFiles.includes('DiChuyen.txt')) {
+                    html += `
+                        <div class="explorer-item-node file" onclick="triggerFileAction('DiChuyen')">
+                            <i class="fa-solid fa-file-circle-minus"></i>
+                            <span>DiChuyen.txt</span>
+                        </div>
+                    `;
+                }
+                grid.innerHTML = html || '<span style="font-size:13px; color:gray;">Thư mục trống</span>';
+            } else if (currentFolderLoc === 'Recycle') {
+                let html = '';
+                recycleBinFiles.forEach(file => {
+                    html += `
+                        <div class="explorer-item-node file" onclick="restoreFile('${file}')" title="Nhấp để khôi phục">
+                            <i class="fa-solid fa-trash-arrow-up" style="color:#eb5e55;"></i>
+                            <span>${file}</span>
+                        </div>
+                    `;
+                });
+                grid.innerHTML = html || '<span style="font-size:13px; color:gray;">Thùng rác trống</span>';
+            }
+        }
+
+        function navigateExplorer(loc) {
+            currentFolderLoc = loc;
+            document.getElementById('explorer-path').innerText = `This PC > Local Disk (D:) ${loc !== 'D:' ? '> ' + loc : ''}`;
+            document.querySelectorAll('.explorer-nav-item').forEach(el => el.classList.remove('active'));
+            if (loc === 'Recycle') {
+                document.getElementById('nav-recycle').classList.add('active');
+            } else {
+                document.getElementById('nav-d').classList.add('active');
+            }
+            updateExplorerUI();
+        }
+
+        function triggerFileAction(fileType) {
+            if (fileType === 'GhiChu') {
+                alert("Xóa GhiChuQuanTrong.txt (Chuyển vào thùng rác)!");
+                recycleBinFiles.push('GhiChuQuanTrong.txt');
+            } else {
+                alert("Xóa vĩnh viễn DiChuyen.txt (Nhấn giữ Shift + Delete)!");
+                recycleBinFiles.push('DiChuyen.txt'); // we simulated permanent delete (actually we won't show it in recycle bin either)
+            }
+            updateExplorerUI();
+        }
+
+        function restoreFile(file) {
+            alert(`Khôi phục tệp ${file} về vị trí cũ!`);
+            recycleBinFiles = recycleBinFiles.filter(f => f !== file);
+            updateExplorerUI();
+        }
+
+        // Toggle dropdowns in Task 2
+        function toggleRefCard(el) {
+            const details = el.querySelector('.ref-dropdown-details');
+            const arrow = el.querySelector('.arrow-indicator');
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                arrow.className = 'arrow-indicator fa-solid fa-chevron-down';
+            } else {
+                details.style.display = 'block';
+                arrow.className = 'arrow-indicator fa-solid fa-chevron-up';
+            }
+        }
+
+        // Interactive Prompt Simulator (Task 3)
+        let currentPromptTask = 'summary';
+        let currentPromptLevel = 'basic';
+
+        const promptSimDatabase = {
+            summary: {
+                title: "Tóm tắt tài liệu học thuật (Climate Change and the Politics of Responsibility)",
+                basic: {
+                    prompt: "Tóm tắt tài liệu này",
+                    output: "Bài báo này nói về cách con người và xã hội hiểu khái niệm trách nhiệm trong vấn đề biến đổi khí hậu. Tác giả cho rằng biến đổi khí hậu không chỉ là vấn đề khoa học hay môi trường mà còn là vấn đề chính trị; ai phải chịu trách nhiệm và ai có nghĩa vụ hành động.",
+                    critique: "AI bỏ sót nhiều khái niệm học thuật quan trọng, nội dung hời hợt và thiếu tính thực tiễn cấu trúc [3]."
+                },
+                improved: {
+                    prompt: "Hãy tóm tắt bài báo “Climate Change and the Politics of Responsibility” trong khoảng 200 từ.",
+                    output: "Bài báo phân tích cách trách nhiệm đối với biến đổi khí hậu được hiểu và tranh luận trong xã hội hiện đại. Tác giả cho rằng biến đổi khí hậu không chỉ là vấn đề khoa học mà là một vấn đề chính trị, vì nó liên quan đến việc xác định ai phải chịu trách nhiệm và ai có khả năng hành động để tạo ra thay đổi. Bài viết phê phán cách tiếp cận tập trung vào trách nhiệm cá nhân (như thay đổi lối sống hoặc tiêu dùng xanh). Trách nhiệm nên được hiểu như một trách nhiệm tập thể và mang tính cấu trúc. Tác giả giới thiệu khái niệm “politics of responsibility”, nhấn mạnh vai trò của các phong trào xã hội trong việc buộc các tổ chức quyền lực phải thừa nhận trách nhiệm và thực hiện hành động chính trị.",
+                    critique: "Kết quả có cấu trúc rõ ràng, đầy đủ hơn, đề cập tốt đến các lập luận cốt lõi và kết luận của tác giả [3]."
+                },
+                advanced: {
+                    prompt: "Bạn là giảng viên khoa học chính trị. Hãy phân tích bài báo “Climate Change and the Politics of Responsibility” theo cấu trúc:\n- Research problem\n- Main argument\n- Key concepts related to responsibility\n- Evidence/examples used\n- Strengths and limitations\n- Final conclusion",
+                    output: "<strong>Research Problem:</strong> Bài báo tìm hiểu cách xã hội xác định và phân chia “trách nhiệm” trong vấn đề biến đổi khí hậu, phê phán xu hướng chuyển giao trách nhiệm sang cá nhân.<br><strong>Main Argument:</strong> Trách nhiệm biến đổi khí hậu là vấn đề chính trị mang tính tập thể và cấu trúc chứ không chỉ là đạo đức cá nhân lẻ tẻ.<br><strong>Key Concepts:</strong> Politics of responsibility, Collective responsibility, Structural Responsibility, Activism/Kayaktivism.<br><strong>Evidence/Examples:</strong> Các chiến dịch biểu tình yêu cầu chính phủ hành động, ví dụ về kayaktivism đối đầu với các tập đoàn dầu khí lớn.<br><strong>Strengths:</strong> Kết nối triết học chính trị với nghiên cứu khí hậu thực tế, phân tích sâu sắc.<br><strong>Limitations:</strong> Mang tính lý thuyết cao, thiếu các số liệu định lượng thực nghiệm để tăng tính thuyết phục.<br><strong>Final Conclusion:</strong> Để giải quyết khủng hoảng hiệu quả, xã hội phải chuyển từ việc tự kiểm điểm hành vi cá nhân sang việc thúc đẩy cải tổ chính sách toàn diện thông qua hành động tập thể.",
+                    critique: "Kết quả phân tích logic, mang tính học thuật sâu sắc, cấu trúc cực kỳ rõ ràng và hữu ích cho nghiên cứu [3]."
+                }
             },
-            2: {
-                tag: "Bài tập thực hành 2",
-                title: "Tìm Kiếm & Đánh Giá Nguồn Học Thuật",
-                body: `
-                    <p>Học thuật không chấp nhận sự mơ hồ. Với đề tài <strong>"Ứng dụng IoT trong phát triển đô thị thông minh (Smart City)"</strong>, tôi đã thực hành kỹ năng sàng lọc bài viết chất lượng từ các cơ sở dữ liệu lớn như Google Scholar, IEEE Xplore, ResearchGate và Thư viện số VNU [2].</p>
-                    
-                    <h4>Danh mục 3 tài liệu học thuật tiêu biểu tôi đã phân tích:</h4>
-                    
-                    <div class="ref-box">
-                        <div class="ref-title">1. Zanella, A. et al. (2014) 'Internet of things for smart cities'</div>
-                        <div class="ref-meta">IEEE Internet of Things Journal, 1(1) | Trích dẫn: Rất cao (5/5)</div>
-                    </div>
-                    <div class="ref-box">
-                        <div class="ref-title">2. Khamis, N. (2023) 'IoT Systems in Urban Planning'</div>
-                        <div class="ref-meta">Tech Press (Sách chuyên khảo) | Cập nhật cao | Trích dẫn: 5/5</div>
-                    </div>
-                    <div class="ref-box">
-                        <div class="ref-title">3. Nguyen, T. (2022) 'Giải pháp IoT cho giao thông Hà Nội'</div>
-                        <div class="ref-meta">Tạp chí Khoa học & Công nghệ VN | Thực địa | Trích dẫn: 4/5</div>
-                    </div>
-
-                    <h4>Tiêu chuẩn đánh giá độ tin cậy của tôi:</h4>
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Tiêu chí</th>
-                                <th>Phương pháp kiểm chứng</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Tác giả</strong></td>
-                                <td>Có học hàm học vị hoặc trực thuộc viện nghiên cứu, trường ĐH danh tiếng [2].</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Nhà xuất bản</strong></td>
-                                <td>Nằm trong danh mục chuẩn ISI/Scopus danh giá [2].</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Độ phổ biến</strong></td>
-                                <td>Chỉ số trích dẫn (Citations) thực tế cao vượt trội trên Google Scholar [2].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p><strong>Nhận định cá nhân:</strong> Sự bùng nổ thông tin khiến ta dễ bị lạc lối bởi các nguồn không kiểm chứng. Việc nắm vững kỹ năng kiểm định chất lượng tài liệu giúp tôi bảo vệ tính đúng đắn cho các công trình nghiên cứu sau này [2].</p>
-                `
+            concept: {
+                title: "Giải thích một khái niệm phức tạp (Kayaktivism)",
+                basic: {
+                    prompt: "Hãy giải thích khái niệm “kayaktivism” trong bài báo.",
+                    output: "Trong bài báo, “kayaktivism” là một hình thức hoạt động xã hội mang tính biểu tượng, trong đó các nhà hoạt động sử dụng kayak hoặc thuyền nhỏ để biểu thị liên quan đến vấn đề môi trường.",
+                    critique: "Nội dung cực kỳ đơn giản, thiếu ví dụ thực tế và giải nghĩa gốc từ xã hội học [3]."
+                },
+                improved: {
+                    prompt: "Hãy giải thích khái niệm “kayaktivism” bằng ngôn ngữ học thuật đơn giản dành cho sinh viên năm nhất. Kèm một ví dụ liên quan đến biến đổi khí hậu.",
+                    output: "“Kayaktivism” là một hình thức hoạt động xã hội về môi trường, trong đó các nhà hoạt động sử dụng thuyền kayak hoặc thuyền nhỏ để biểu tình phản đối các hoạt động gây hại cho khí hậu và môi trường. Thuật ngữ này là sự kết hợp giữa “kayak” và “activism”. Ví dụ: Một nhóm nhà hoạt động chèo thuyền kayak ra khu vực cảng dầu để ngăn chặn việc mở rộng khai thác dầu khí của các tập đoàn, thu hút sự chú ý của truyền thông quốc tế.",
+                    critique: "Giải thích trực quan, dễ hiểu, phù hợp cho sinh viên năm nhất bắt đầu nghiên cứu môi trường [3]."
+                },
+                advanced: {
+                    prompt: "Bạn là giảng viên khoa học chính trị. Hãy giải thích khái niệm “kayaktivism” trong bài báo “Climate Change and the Politics of Responsibility”. Yêu cầu:\n- Định nghĩa rõ khái niệm\n- Giải thích vì sao nó quan trọng trong chính trị khí hậu\n- So sánh trách nhiệm cá nhân và trách nhiệm mang tính cấu trúc\n- Đưa ra một ví dụ thực tế\n- Dùng ngôn ngữ dễ hiểu cho sinh viên năm nhất",
+                    output: "<strong>Định nghĩa:</strong> Kayaktivism là một hình thức đấu tranh trực diện, sáng tạo bằng cách sử dụng phương tiện thô sơ (thuyền kayak) làm công cụ phản kháng trước các thế lực công nghiệp khổng lồ.<br><strong>Tầm quan trọng:</strong> Nó tạo ra sự đối lập hình ảnh cực mạnh trên truyền thông giữa người dân bình thường với khối tài sản tập đoàn đồ sộ, buộc chính quyền phải chú ý.<br><strong>So sánh trách nhiệm:</strong> Khác với việc cá nhân đi nhặt rác hay tiết kiệm điện (trách nhiệm cá nhân), hành động này nhắm trực tiếp vào cấu trúc khai thác nhiên liệu hóa thạch, thúc đẩy trách nhiệm có tính hệ thống.<br><strong>Ví dụ:</strong> Đội tàu kayak vây quanh giàn khoan của tập đoàn Shell tại Seattle là biểu tượng nổi bật, buộc cộng đồng quốc tế phải tranh biện về luật khai thác năng lượng.",
+                    critique: "Giải thích sâu, có so sánh đa chiều và liên hệ hệ thống, đạt chất lượng cao về phương pháp giảng dạy [3]."
+                }
             },
-            3: {
-                tag: "Bài tập thực hành 3",
-                title: "Prompt Engineering - Nghệ Thuật Giao Tiếp Với AI",
-                body: `
-                    <p>AI thông minh thế nào hoàn toàn phụ thuộc vào việc bạn biết cách đặt câu hỏi hay không. Tôi thực hành điều này bằng cách chuyển đổi câu lệnh qua 3 cấp độ đối với tác vụ tóm tắt bài nghiên cứu học thuật phức tạp [3].</p>
-                    
-                    <h4>Mô phỏng sự khác biệt của cấu trúc Prompt:</h4>
-                    <div class="prompt-simulator">
-                        <div class="sim-tabs">
-                            <button class="sim-tab-btn active" onclick="switchPromptTab(this, 'prompt-co-ban')">Cấp Độ 1: Cơ Bản</button>
-                            <button class="sim-tab-btn" onclick="switchPromptTab(this, 'prompt-cai-tien')">Cấp Độ 2: Cải Tiến</button>
-                            <button class="sim-tab-btn" onclick="switchPromptTab(this, 'prompt-nang-cao')">Cấp Độ 3: Nâng Cao</button>
-                        </div>
-                        
-                        <div id="prompt-co-ban" class="sim-content active">
-                            <div class="prompt-text">"Tóm tắt tài liệu này giúp tôi."</div>
-                            <p style="font-size:13.5px; color: var(--accent-gold);"><i class="fa-solid fa-triangle-exclamation"></i> <strong>Đánh giá:</strong> AI cho ra kết quả quá ngắn, hời hợt và bỏ sót toàn bộ các khái niệm cốt lõi như 'kayaktivism' [3].</p>
-                        </div>
-                        
-                        <div id="prompt-cai-tien" class="sim-content">
-                            <div class="prompt-text">"Hãy tóm tắt bài báo 'Climate Change and the Politics of Responsibility' trong khoảng 200 từ, nêu bật các luận điểm chính."</div>
-                            <p style="font-size:13.5px; color: var(--accent-mint);"><i class="fa-solid fa-circle-check"></i> <strong>Đánh giá:</strong> Kết quả rõ ràng hơn, có cấu trúc tốt và tập trung vào mạch tư duy chính của tác giả [3].</p>
-                        </div>
-                        
-                        <div id="prompt-nang-cao" class="sim-content">
-                            <div class="prompt-text">"Bạn là một giảng viên khoa học chính trị. Hãy phân tích cấu trúc bài báo theo sơ đồ logic: Vấn đề nghiên cứu -> Luận điểm chính -> Khái niệm mấu chốt -> Minh chứng thực tế -> Giới hạn nghiên cứu."</div>
-                            <p style="font-size:13.5px; color: var(--accent-mint);"><i class="fa-solid fa-circle-check"></i> <strong>Đánh giá:</strong> Kết quả đạt chất lượng học thuật sâu sắc nhất, tổ chức thông tin logic cao, có ích cho tự học [3].</p>
-                        </div>
-                    </div>
-
-                    <p><strong>Góc nhìn của tôi:</strong> Việc áp dụng kỹ thuật prompt chuyên sâu (Role playing, Structured và Format prompting) giúp tôi biến AI từ một 'máy tìm kiếm' thành một 'trợ lý đàm thoại' có chuyên môn cao [3].</p>
-                `
-            },
-            4: {
-                tag: "Bài tập thực hành 4",
-                title: "Ứng Dụng Công Cụ Hợp Tác Trực Tuyến Trong Dự Án",
-                body: `
-                    <p>Làm việc nhóm từ xa luôn là một bài toán khó về quản trị tiến độ và giao tiếp. Dự án nhóm vừa qua là cơ hội tuyệt vời để tôi thiết lập quy trình làm việc kỹ thuật số hiệu quả dựa trên bộ 4 công cụ: Trello, Docs, Drive và Discord [3].</p>
-                    
-                    <h4>Quy trình quản lý tiến độ trực quan trên Trello:</h4>
-                    <div class="kanban-preview">
-                        <div class="kanban-col">
-                            <div class="col-title">To Do (Cần làm)</div>
-                            <div class="kanban-card" style="border-left-color: #eb5e55;">Tìm ý tưởng đề tài</div>
-                            <div class="kanban-card" style="border-left-color: #eb5e55;">Phân công nhiệm vụ</div>
-                        </div>
-                        <div class="kanban-col">
-                            <div class="col-title">Doing (Đang thực hiện)</div>
-                            <div class="kanban-card" style="border-left-color: var(--accent-gold);">Soạn thảo đại cương</div>
-                            <div class="kanban-card" style="border-left-color: var(--accent-gold);">Chỉnh sửa văn bản</div>
-                        </div>
-                        <div class="kanban-col">
-                            <div class="col-title">Done (Đã hoàn thành)</div>
-                            <div class="kanban-card" style="border-left-color: var(--accent-mint);">Nộp file báo cáo nhóm</div>
-                            <div class="kanban-card" style="border-left-color: var(--accent-mint);">Kiểm duyệt tài liệu</div>
-                        </div>
-                    </div>
-
-                    <h4>Giải pháp khắc phục các khó khăn thực tế:</h4>
-                    <p>Khi một vài thành viên phản hồi chậm trễ hoặc tạo ra nhiều phiên bản tài liệu chồng chéo gây nhầm lẫn, chúng tôi đã thống nhất: chỉ lưu trữ duy nhất trên một link Google Drive dùng chung, phân quyền chỉnh sửa trực tiếp, và theo dõi 'lịch sử chỉnh sửa' của Google Docs để nắm bắt tiến trình đóng góp của từng cá nhân [3].</p>
-                    <p><strong>Rút ra:</strong> Công cụ tốt không bằng cách phối hợp chặt chẽ. Sự minh bạch trong phân công chính là chìa khóa tháo gỡ mọi xung đột làm việc nhóm [3].</p>
-                `
-            },
-            5: {
-                tag: "Bài tập thực hành 5",
-                title: "Sáng Tạo Nội Dung Đa Phương Tiện Nhờ GenAI",
-                body: `
-                    <p>Tôi đã thử thách bản thân với bài toán phối hợp sức mạnh của nhiều mô hình AI khác nhau để tạo ra một sản phẩm Infographics hoàn chỉnh, sinh động về chủ đề văn hóa Hawaii [3].</p>
-                    
-                    <h4>Quá trình 'Chuyền bóng' giữa các AI:</h4>
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Bước thực hiện</th>
-                                <th>Công cụ sử dụng</th>
-                                <th>Vai trò cụ thể</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>1. Lên nội dung</strong></td>
-                                <td>ChatGPT</td>
-                                <td>Đóng vai Content Writer để viết văn bản ngắn gọn về ẩm thực (Poke, Poi), điệu nhảy Hula và các hoạt động thể thao biển [3].</td>
-                            </tr>
-                            <tr>
-                                <td><strong>2. Ý tưởng hình ảnh</strong></td>
-                                <td>Google Gemini</td>
-                                <td>Gợi ý cách phối màu nhiệt đới sống động, biểu tượng hoa dâm bụt, sóng biển và phong cảnh hoàng hôn chiều tà [3].</td>
-                            </tr>
-                            <tr>
-                                <td><strong>3. Định dạng Layout</strong></td>
-                                <td>Canva AI</td>
-                                <td>Tạo khung bố cục, phân bố cột thông tin và biểu tượng trực quan [3].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Sự can thiệp thiết yếu của con người:</h4>
-                    <p>Dù AI cho ra kết quả rất nhanh, tôi nhận thấy các mẫu thiết kế của Canva AI đôi khi còn đơn giản và khuôn mẫu. Tôi đã dành nhiều thời gian để tinh chỉnh thủ công: loại bỏ thông tin thừa, sửa đổi câu chữ cho thân thiện và điều chỉnh màu sắc đạt độ cân đối thị giác tốt nhất [3].</p>
-                `
-            },
-            6: {
-                tag: "Bài tập thực hành 6",
-                title: "Sử Dụng AI Có Trách Nhiệm Trong Học Thuật",
-                body: `
-                    <p>Tại VNU, tính trung thực học thuật luôn là ranh giới bất khả xâm phạm. AI chỉ được định hình là một 'trợ lý đắc lực' hỗ trợ tư duy, tuyệt đối không phải là 'tác giả' thay thế con người [3].</p>
-                    
-                    <h4>6 Nguyên tắc cốt lõi tôi luôn tuân thủ:</h4>
-                    <div class="ethics-grid">
-                        <div class="ethics-item">
-                            <div class="ethics-num">01</div>
-                            <strong>Tư duy đi trước, Công cụ theo sau</strong>
-                            <p style="font-size:13px; margin-top:5px;">Luôn phác thảo dàn ý cá nhân trước khi mở bất kỳ ứng dụng AI nào [3].</p>
-                        </div>
-                        <div class="ethics-item">
-                            <div class="ethics-num">02</div>
-                            <strong>Bảo chứng sự thật (Fact-check)</strong>
-                            <p style="font-size:13px; margin-top:5px;">Tuyệt đối không tin 100% số liệu hay trích dẫn do AI cung cấp, luôn đối chiếu chéo [3].</p>
-                        </div>
-                        <div class="ethics-item">
-                            <div class="ethics-num">03</div>
-                            <strong>Minh bạch tuyệt đối</strong>
-                            <p style="font-size:13px; margin-top:5px;">Luôn trung thực khai báo mức độ hỗ trợ của AI ở phần phụ lục của bài viết [3].</p>
-                        </div>
-                        <div class="ethics-item">
-                            <div class="ethics-num">04</div>
-                            <strong>Bảo mật thông tin nội bộ</strong>
-                            <p style="font-size:13px; margin-top:5px;">Không đăng tải dữ liệu nội bộ hay thông tin cá nhân của người khác lên nền tảng AI công cộng [3].</p>
-                        </div>
-                    </div>
-
-                    <h4>Dự án thực tế: Khảo sát Nghị định 116</h4>
-                    <p>Tôi đã áp dụng quy trình này để thiết kế bảng hỏi khảo sát về <strong>"Đánh giá phản hồi của sinh viên năm nhất đối với chính sách hỗ trợ sinh hoạt phí theo Nghị định 116"</strong>. Khi AI đề xuất danh mục tài liệu và câu hỏi, tôi đã tiến hành kiểm định độc lập, phát hiện và loại bỏ các tài liệu giả mạo do AI 'tự bịa' (hallucinate), thay đổi hơn 60% nội dung câu hỏi để sát với bối cảnh đặc thù thực tế tại Trường Đại học Giáo dục - ĐHQGHN [3].</p>
-                `
+            questions: {
+                title: "Tạo câu hỏi ôn tập tự học",
+                basic: {
+                    prompt: "Hãy tạo câu hỏi ôn tập cho bài báo “Climate Change and the Politics of Responsibility”.",
+                    output: "1. Chủ đề của bài báo là gì?<br>2. Trách nhiệm được hiểu như thế nào?<br>3. Ai chịu trách nhiệm cho biến đổi khí hậu?",
+                    critique: "Câu hỏi cực kỳ hời hợt, chỉ kiểm tra bề nổi của văn bản, hoàn toàn thiếu tính phân loại và tư duy phản biện [3]."
+                },
+                improved: {
+                    prompt: "Hãy tạo 5 câu hỏi ôn tập cho bài báo “Climate Change and the Politics of Responsibility”. Bao gồm câu hỏi về khái niệm chính, phân tích và liên hệ thực tế.",
+                    output: "1. Khái niệm 'politics of responsibility' trong bài báo được hiểu như thế nào?<br>2. Tại sao tác giả phản đối cách tiếp cận chỉ tập trung vào hành vi tiêu dùng xanh của cá nhân?<br>3. Trách nhiệm tập thể khác biệt như thế nào so với trách nhiệm cá nhân?<br>4. Hãy phân tích ý nghĩa chính trị của hành động Kayaktivism.<br>5. Liên hệ thực tế: Có phong trào xã hội về môi trường nào tại Việt Nam đang áp dụng tinh thần trách nhiệm cấu trúc này không?",
+                    critique: "Bộ câu hỏi đa dạng hơn, đã kích thích tư duy phân tích và vận dụng thực tế cho người học [3]."
+                },
+                advanced: {
+                    prompt: "Bạn là giảng viên khoa học chính trị. Hãy tạo 8 câu hỏi ôn tập cho sinh viên năm nhất dựa trên bài báo “Climate Change and the Politics of Responsibility”. Yêu cầu: Bao gồm câu hỏi kiến thức, phân tích và phản biện. Tập trung vào các khái niệm: politics of responsibility, collective responsibility, structural responsibility.",
+                    output: "1. [Kiến thức] Khái niệm 'politics of responsibility' nghĩa là gì trong bối cảnh khí hậu?<br>2. [Phân tích] Tại sao tác giả lập luận rằng việc chỉ quy trách nhiệm cho cá nhân là một 'cái bẫy chính trị'?<br>3. [Phản biện] Nếu các cấu trúc lớn (như tập đoàn và chính phủ) chịu trách nhiệm chính, liệu cá nhân có quyền thờ ơ với hành vi bảo vệ môi trường của mình?<br>4. [Vận dụng] Hãy phân biệt 'trách nhiệm tập thể' (collective) và 'trách nhiệm cấu trúc' (structural) theo văn bản.<br>5. [Thực tế] Kayaktivism đóng vai trò gì trong việc chuyển hóa nhận thức từ trách nhiệm cá nhân sang trách nhiệm cấu trúc?<br>6. [Đánh giá] Bạn đồng ý hay không với luận điểm cho rằng biến đổi khí hậu trước hết là một vấn đề chính trị hơn là khoa học kỹ thuật? Giải thích vì sao.<br>7. [Liên hệ] Trình bày quan điểm của bạn về cơ chế bồi hoàn kinh phí môi trường đối với các ngành công nghiệp xả thải lớn.<br>8. [Sáng tạo] Thiết kế một chiến dịch nâng cao nhận thức dựa trên triết lý trách nhiệm cấu trúc cho cộng đồng nơi bạn sống.",
+                    critique: "Bộ câu hỏi xuất sắc, kích thích sâu tư duy phản biện, kết nối hoàn hảo lý thuyết với khả năng sáng tạo giải pháp [3]."
+                }
             }
         };
 
-        // Modal triggers
+        function selectSimTask(task) {
+            currentPromptTask = task;
+            document.querySelectorAll('.sim-task-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            updateSimUI();
+        }
+
+        function selectSimLevel(level) {
+            currentPromptLevel = level;
+            document.querySelectorAll('.sim-level-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            updateSimUI();
+        }
+
+        function updateSimUI() {
+            const data = promptSimDatabase[currentPromptTask][currentPromptLevel];
+            document.getElementById('sim-prompt-text').innerText = data.prompt;
+            document.getElementById('sim-ai-text').innerHTML = data.output;
+            document.getElementById('sim-critique-text').innerHTML = `<i class="fa-solid fa-circle-info"></i> ${data.critique}`;
+        }
+
+        // Interactive Hawaii Infographic Tabs (Task 5)
+        const infographicData = {
+            food: {
+                title: "Traditional Food (Ẩm thực truyền thống)",
+                text: "ChatGPT đã đề xuất các đoạn mô tả ngắn gọn và hấp dẫn về các món ăn cốt lõi mang tính linh hồn của Hawaii: <strong>Poke</strong> (salad cá sống thái khối với nước tương và dầu mè), <strong>Poi</strong> (món ăn truyền thống làm từ khoai môn giã nhuyễn), <strong>Kalua Pig</strong> (thịt lợn nướng chậm trong lò đất imu) và <strong>Shave Ice</strong> (đá bào rưới siro hoa quả rực rỡ) [3]."
+            },
+            dance: {
+                title: "Hula Dance (Điệu nhảy Hula)",
+                text: "Không chỉ đơn thuần là giải trí, điệu nhảy <strong>Hula</strong> là một hình thức truyền tải câu chuyện văn hóa, lịch sử và tâm linh sâu sắc của người dân bản địa Hawaii. Qua chuyển động uyển chuyển của tay và hông, vũ công tái hiện lại sự chuyển động của sóng biển, hàng dừa và những truyền thuyết về các vị thần núi lửa [3]."
+            },
+            ocean: {
+                title: "Ocean Activities (Hoạt động biển)",
+                text: "Đề xuất chuỗi hoạt động trải nghiệm nhiệt đới hấp dẫn bao gồm: lướt sóng (surfing - cái nôi của lướt sóng hiện đại), lặn ngắm san hô (snorkeling) tại vịnh Hanauma, lặn biển sâu (scuba diving), ngắm cá voi lưng gù (whale watching) và chèo ván đứng (stand-up paddleboarding) [3]."
+            }
+        };
+
+        function selectInfographicTab(tab, btn) {
+            document.querySelectorAll('.mockup-tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const data = infographicData[tab];
+            document.getElementById('mockup-display-area').innerHTML = `
+                <h5 style="color:var(--accent-gold); font-size:16px; margin-bottom:10px;">${data.title}</h5>
+                <p style="font-size:14px; line-height:1.6; color:var(--text-secondary);">${data.text}</p>
+            `;
+        }
+
+        // Survey clean-up before/after toggle (Task 6)
+        const surveyCompare = {
+            before: `<strong>Câu hỏi do AI thiết kế thô (Hallucinated/Trùng lặp):</strong><br>
+            - 1. Bạn cảm thấy mức hỗ trợ 3,63 triệu đồng/tháng là thỏa đáng không?<br>
+            - 2. Thủ tục nhận tiền sinh hoạt phí và giấy tờ tại trường diễn ra có nhanh chóng và thuận lợi không? (Câu hỏi phức hợp gây nhiễu dữ liệu)<br>
+            - 3. Chính sách Nghị định 161 giúp bạn giảm bớt gánh nặng? (Sai hoàn toàn số hiệu Nghị định - Thực tế là Nghị định 116)<br>
+            - *Danh mục tài liệu đi kèm: Xuất hiện nhiều bài báo ảo do AI tự sáng tạo, không tồn tại trong thực tế học thuật [3].`,
+            after: `<strong>Câu hỏi sau khi được con người lọc và tối ưu hóa thực tế:</strong><br>
+            - 1. [Tách câu hỏi đơn nghĩa]: Tách khía cạnh “thủ tục giấy tờ” và “thời gian thực tế nhận tiền hỗ trợ” thành 2 câu riêng biệt để đo lường chính xác.<br>
+            - 2. [Bổ sung biến thực tế cực kỳ quan trọng]: “Mức độ lo ngại của bạn về điều khoản bồi hoàn kinh phí nếu không làm việc trong ngành giáo dục sau 2 năm tốt nghiệp”.<br>
+            - 3. [Bổ sung câu hỏi định danh]: Phân loại đối tượng SV diện “địa phương đặt hàng” hay “đăng ký theo chỉ tiêu chung của Bộ”.<br>
+            - *Danh mục tài liệu: Loại bỏ 100% tài liệu giả của AI, thay thế bằng tài liệu chuẩn từ thư viện ĐHQGHN và Tạp chí Khoa học Giáo dục Việt Nam [3].`
+        };
+
+        function toggleSurveyView(state, btn) {
+            document.querySelectorAll('.cleanup-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('survey-compare-text').innerHTML = surveyCompare[state];
+        }
+
+        // Global Modal triggers
         const modalOverlay = document.getElementById('modalOverlay');
         const modalContent = document.getElementById('modalContent');
 
         function openModal(taskId) {
-            const data = taskDatabase[taskId];
-            if (data) {
-                modalContent.innerHTML = `
+            let htmlContent = '';
+            
+            if (taskId === 1) {
+                htmlContent = `
                     <div class="modal-header">
-                        <span class="modal-tag">${data.tag}</span>
-                        <h3 class="modal-title">${data.title}</h3>
+                        <span class="modal-tag">Bài Thực Hành 1</span>
+                        <h3 class="modal-title">Thao Tác Tệp Tin & Thư Mục Trên Hệ Điều Hành</h3>
                     </div>
                     <div class="modal-body">
-                        ${data.body}
+                        <p><strong>Mục tiêu bài học:</strong> Làm chủ các thao tác quản trị tài nguyên tệp tin căn bản trên Windows, hình thành thói quen lưu trữ dữ liệu khoa học để tối ưu hóa hiệu suất làm việc [1].</p>
+                        
+                        <h4>Minh họa tương tác: Trình mô phỏng File Explorer</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-mouse-pointer"></i> Hãy nhấp vào các thư mục bên dưới để di chuyển và trải nghiệm quá trình dọn dẹp tệp tin [1].</p>
+                        <div class="interactive-explorer">
+                            <div class="explorer-header">
+                                <span id="explorer-path">This PC > Local Disk (D:)</span>
+                                <span><i class="fa-solid fa-magnifying-glass"></i> Search D:</span>
+                            </div>
+                            <div class="explorer-body">
+                                <div class="explorer-sidebar">
+                                    <div class="explorer-nav-item active" id="nav-d" onclick="navigateExplorer('D:')">
+                                        <i class="fa-solid fa-hard-drive"></i> Local Disk (D:)
+                                    </div>
+                                    <div class="explorer-nav-item" id="nav-recycle" onclick="navigateExplorer('Recycle')">
+                                        <i class="fa-solid fa-trash"></i> Recycle Bin
+                                    </div>
+                                </div>
+                                <div class="explorer-content">
+                                    <div class="explorer-grid" id="explorer-dynamic-grid">
+                                        <!-- Injected by updateExplorerUI -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Chi tiết 12 bước thực hành chuẩn xác:</h4>
+                        <div class="steps-container">
+                            <div class="step-node">
+                                <div class="step-badge">1</div>
+                                <div class="step-details">
+                                    <h5>Mở File Explorer</h5>
+                                    <p>Nhấn tổ hợp phím <code>Windows + E</code> hoặc nhấp trực tiếp vào biểu tượng thư mục màu vàng quen thuộc trên thanh tác vụ Windows [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">2</div>
+                                <div class="step-details">
+                                    <h5>Truy cập ổ đĩa không chứa hệ điều hành</h5>
+                                    <p>Ở cột bên trái, nhấp vào <strong>This PC</strong>, sau đó nhấp đúp vào một ổ đĩa ngoài hệ thống (ví dụ: ổ D: hoặc E:). Nếu máy chỉ có ổ C:, hãy sử dụng thư mục Documents [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">3</div>
+                                <div class="step-details">
+                                    <h5>Tạo thư mục làm việc mới</h5>
+                                    <p>Nhấp chuột phải vào khoảng trống bất kỳ -> Chọn <strong>New</strong> -> <strong>Folder</strong>. Tiến hành đặt tên thư mục chuẩn hóa: <code>ThucHanh_NguyenThiDanLinh</code> và nhấn Enter [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">4</div>
+                                <div class="step-details">
+                                    <h5>Vào thư mục vừa tạo</h5>
+                                    <p>Thao tác nhấp đúp chuột vào thư mục <code>ThucHanh_NguyenThiDanLinh</code> vừa thiết lập để bắt đầu làm việc bên trong [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">5</div>
+                                <div class="step-details">
+                                    <h5>Tạo tệp văn bản thô ban đầu</h5>
+                                    <p>Nhấp chuột phải vào khoảng trống bên trong thư mục mới -> Chọn <strong>New</strong> -> <strong>Text Document</strong>. Đặt tên tệp tin là <code>GhiChu.txt</code> và nhấn Enter [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">6</div>
+                                <div class="step-details">
+                                    <h5>Thực hiện đổi tên tệp</h5>
+                                    <p>Nhấp chuột phải vào tệp <code>GhiChu.txt</code> vừa tạo -> Chọn biểu tượng <strong>Rename</strong> (hoặc nhấn phím F2). Đổi tên tệp thành <code>GhiChuQuanTrong.txt</code> và nhấn Enter [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">7</div>
+                                <div class="step-details">
+                                    <h5>Khởi tạo thư mục con</h5>
+                                    <p>Nhấp chuột phải vào khoảng trống -> Chọn <strong>New</strong> -> <strong>Folder</strong>. Tiến hành đặt tên thư mục con này là <code>TaiLieu</code> và nhấn Enter [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">8</div>
+                                <div class="step-details">
+                                    <h5>Thao tác Sao chép tệp (Copy & Paste)</h5>
+                                    <p>Nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> Chọn <strong>Copy</strong> (hoặc nhấn tổ hợp phím <code>Ctrl + C</code>). Nhấp đúp mở thư mục <code>TaiLieu</code>, nhấp chuột phải -> Chọn <strong>Paste</strong> (hoặc nhấn <code>Ctrl + V</code>) [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">9</div>
+                                <div class="step-details">
+                                    <h5>Thao tác Di chuyển tệp (Cut & Paste)</h5>
+                                    <p>Quay lại thư mục cha. Tạo tệp mới tên là <code>DiChuyen.txt</code>. Nhấp chuột phải vào tệp này -> Chọn <strong>Cut</strong> (hoặc nhấn <code>Ctrl + X</code>). Nhấp đúp mở thư mục <code>TaiLieu</code>, nhấp chuột phải vào khoảng trống -> Chọn <strong>Paste</strong> (hoặc nhấn <code>Ctrl + V</code>) [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">10</div>
+                                <div class="step-details">
+                                    <h5>Xóa tệp tạm thời</h5>
+                                    <p>Trong thư mục <code>TaiLieu</code>, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> Chọn <strong>Delete</strong> (hoặc nhấn phím Delete). Tệp sẽ được chuyển thẳng vào Thùng rác (Recycle Bin) [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">11</div>
+                                <div class="step-details">
+                                    <h5>Xóa tệp vĩnh viễn khỏi hệ thống</h5>
+                                    <p>Chọn tệp <code>DiChuyen.txt</code> trong thư mục <code>TaiLieu</code>, nhấn giữ phím <code>Shift</code> và nhấn phím <code>Delete</code>. Một cảnh báo hiện ra, chọn Đồng ý để xóa tệp vĩnh viễn không qua Thùng rác [1].</p>
+                                </div>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-badge">12</div>
+                                <div class="step-details">
+                                    <h5>Khôi phục dữ liệu đã xóa</h5>
+                                    <p>Tìm biểu tượng <strong>Recycle Bin</strong> trên màn hình Desktop, nhấp đúp để mở. Tìm tệp <code>GhiChuQuanTrong.txt</code> đã xóa ở bước 10, nhấp chuột phải vào nó và chọn <strong>Restore</strong> để đưa tệp trở lại vị trí ban đầu [1].</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Bài học cốt lõi rút ra:</h4>
+                        <p>Kỹ năng quản lý thư mục là nền tảng tối quan trọng của năng lực số. Việc sử dụng thành thạo các phím tắt (Ctrl+C, Ctrl+V, Ctrl+X, Shift+Delete) và tổ chức dữ liệu dạng cây giúp tối ưu hóa đáng kể thời gian truy xuất thông tin, tránh thất thoát các dữ liệu học tập quý giá [1].</p>
                     </div>
                 `;
-                modalOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // block page scroll
+            } else if (taskId === 2) {
+                htmlContent = `
+                    <div class="modal-header">
+                        <span class="modal-tag">Bài Thực Hành 2</span>
+                        <h3 class="modal-title">Tìm Kiếm & Đánh Giá Nguồn Thông Tin Học Thuật</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Mục tiêu bài học:</strong> Rèn luyện kỹ năng nghiên cứu khoa học thông qua việc xác định từ khóa, truy vấn các cơ sở dữ liệu học thuật quốc tế lớn và đánh giá tính liêm chính, độ tin cậy của tài liệu tham khảo [2].</p>
+                        
+                        <h4>Danh mục đầy đủ 10 tài liệu nghiên cứu về IoT & Smart City (Chuẩn Harvard):</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-angle-down"></i> Nhấp vào từng tài liệu bên dưới để xem đánh giá thông số học thuật chi tiết [2].</p>
+                        
+                        <div class="ref-interactive-list">
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">1. Zanella, A. et al. (2014) 'Internet of things for smart cities', <em>IEEE Internet of Things Journal</em>, 1(1), pp. 22-32.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Tác giả:</strong> Chuyên gia công nghệ uy tín của IEEE.</p>
+                                    <p><strong>Cơ quan xuất bản:</strong> IEEE Xplore (Danh mục chuẩn Scopus/ISI uy tín cao) [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Rất cao (5/5) [2].</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">2. Gaur, A. et al. (2015) 'Smart city architecture and its applications based on IoT', <em>Procedia Computer Science</em>.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Cơ quan xuất bản:</strong> Elsevier Procedia (Chuẩn Scopus).</p>
+                                    <p><strong>Nội dung:</strong> Đề xuất khung kiến trúc công nghệ cho đô thị thông minh.</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Cao (4/5).</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">3. Bahrin, A.S. et al. (2016) 'Industry 4.0: A review on industrial automation and IoT', <em>TMECH</em>.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Nội dung:</strong> Phân tích mối liên hệ mật thiết giữa Công nghiệp 4.0, tự động hóa và IoT.</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Cao (4/5).</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">4. Hashem, I.A.T. et al. (2016) 'The role of big data in smart city', <em>International Journal of Information Management</em>.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Cơ quan xuất bản:</strong> Elsevier (Scopus Q1).</p>
+                                    <p><strong>Nội dung:</strong> Nghiên cứu mối quan hệ tương hỗ và thách thức bảo mật của Dữ liệu lớn (Big Data) trong đô thị [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Rất cao (5/5).</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">5. Khamis, N. (2023) <em>IoT Systems in Urban Planning</em>, 2nd edn, Tech Press. (Sách chuyên khảo).</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Tác giả:</strong> N. Khamis (Chuyên gia đầu ngành).</p>
+                                    <p><strong>Nội dung:</strong> Sách chuyên khảo về hệ thống hóa lý thuyết quy hoạch đô thị dựa trên nền tảng số [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Rất cao (5/5) [2].</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">6. Nguyen, T. (2022) 'Giải pháp IoT cho giao thông Hà Nội', <em>Tạp chí Khoa học & Công nghệ Việt Nam</em>.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Tác giả:</strong> Nhà nghiên cứu trong nước.</p>
+                                    <p><strong>Nội dung:</strong> Khảo sát thực địa và đề xuất ứng dụng cảm biến tự động hóa phân luồng giao thông tại Hà Nội [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Cao (4/5) [2].</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">7. Al-Fuqaha, A. et al. (2015) 'Internet of Things: A Survey on Enabling Technologies, Protocols, and Applications', <em>IEEE Communications Surveys & Tutorials</em>.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Nội dung:</strong> Bài tổng quan đồ sộ về các giao thức mạng và kiến trúc hạ tầng kỹ thuật 4 lớp của IoT [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Rất cao (5/5).</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">8. VNU Library (2024) <em>Kỷ yếu hội thảo Công nghệ số trong quản lý đô thị</em>, NXB Đại học Quốc gia.</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Cơ quan xuất bản:</strong> Nhà xuất bản ĐHQG uy tín hàng đầu trong nước [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Cao (4/5).</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">9. Microsoft Azure (2023) <em>Smart City Solutions Overview</em>, White Paper. (Nguồn mở uy tín).</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Tác giả/Tổ chức:</strong> Microsoft (Tập đoàn công nghệ đa quốc gia hàng đầu) [2].</p>
+                                    <p><strong>Nội dung:</strong> Giới thiệu các giải pháp kỹ thuật đám mây thực tế áp dụng cho đô thị thông minh [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Trung bình (3/5) [2].</p>
+                                </div>
+                            </div>
+
+                            <div class="ref-card" onclick="toggleRefCard(this)">
+                                <div class="ref-main">
+                                    <span class="ref-cite">10. Batty, M. (2013) <em>The New Science of Cities</em>, MIT Press. (Sách chuyên khảo).</span>
+                                    <span class="ref-badge"><i class="arrow-indicator fa-solid fa-chevron-down"></i> Detail</span>
+                                </div>
+                                <div class="ref-dropdown-details">
+                                    <p><strong>Cơ quan xuất bản:</strong> MIT Press danh tiếng.</p>
+                                    <p><strong>Nội dung:</strong> Phân tích tầm nhìn quy hoạch đô thị dựa trên luồng dữ liệu hành vi cư dân [2].</p>
+                                    <p><strong>Đánh giá tin cậy:</strong> Rất cao (5/5).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Bảng tổng hợp và đánh giá độ tin cậy nguồn tin học thuật:</h4>
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên tài liệu</th>
+                                    <th>Tác giả / Tổ chức</th>
+                                    <th>Phương pháp nghiên cứu</th>
+                                    <th>Xếp hạng tin cậy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Internet of things for smart cities</td>
+                                    <td>IEEE Journal</td>
+                                    <td>Thực nghiệm & Tổng hợp</td>
+                                    <td>Rất cao (5/5) [2]</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>IoT Systems in Urban Planning</td>
+                                    <td>N. Khamis (Chuyên gia)</td>
+                                    <td>Hệ thống hóa lý thuyết</td>
+                                    <td>Rất cao (5/5) [2]</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Giải pháp IoT cho giao thông...</td>
+                                    <td>Tạp chí KH&CN VN</td>
+                                    <td>Khảo sát thực địa</td>
+                                    <td>Cao (4/5) [2]</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Smart City Solutions</td>
+                                    <td>Microsoft</td>
+                                    <td>Giới thiệu giải pháp thực tế</td>
+                                    <td>Trung bình (3/5) [2]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Phân tích nội dung tìm kiếm cốt lõi:</h4>
+                        <p><strong>Hạ tầng kỹ thuật:</strong> Theo Al-Fuqaha (2015), hạ tầng IoT của đô thị thông minh được chia làm 4 lớp chặt chẽ: cảm biến thu thập, mạng truyền dẫn truyền tải dữ liệu, lớp xử lý trung tâm và lớp ứng dụng thực tế [2].</p>
+                        <p><strong>Quản lý giao thông:</strong> Nghiên cứu thực địa của Nguyen (2022) chứng minh việc ứng dụng cảm biến thời gian thực giúp điều chỉnh đèn tín hiệu linh hoạt, giảm thiểu từ 20% đến 25% tình trạng ùn tắc giao thông đô thị [2].</p>
+                        <p><strong>Thách thức bảo mật:</strong> Hashem (2016) cảnh báo Big Data từ IoT là con dao hai lưỡi; nếu thiếu hệ thống mã hóa và bảo mật nghiêm ngặt, dữ liệu hành vi của hàng triệu cư dân sẽ đối mặt rủi ro rò rỉ nghiêm trọng [2].</p>
+
+                        <h4>Bài học rút ra:</h4>
+                        <p>Đứng trước biển thông tin khổng lồ, kỹ năng định vị và đánh giá nguồn tin học thuật là lá chắn bảo vệ sự liêm chính cho nhà nghiên cứu. Việc phân biệt rõ tài liệu nghiên cứu ngang hàng (peer-reviewed) với các tài liệu quảng bá kỹ thuật (White paper) giúp xây dựng nền tảng lý thuyết vững chắc [2].</p>
+                    </div>
+                `;
+            } else if (taskId === 3) {
+                htmlContent = `
+                    <div class="modal-header">
+                        <span class="modal-tag">Bài Thực Hành 3</span>
+                        <h3 class="modal-title">Kỹ Thuật Thiết Kế Prompt Hiệu Quả</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Mục tiêu bài học:</strong> Rèn luyện tư duy thiết kế câu lệnh có cấu trúc (Prompt Engineering) để làm chủ và khai thác tối đa năng lực của Mô hình ngôn ngữ lớn (LLM), tránh việc nhận lại những phản hồi chung chung, hời hợt [3].</p>
+                        
+                        <h4>Minh họa tương tác: Trình mô phỏng tiến hóa Prompt</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Hãy nhấp chọn tác vụ và cấp độ Prompt để quan sát cách câu lệnh được cải tiến và phản hồi tương ứng từ AI [3]:</p>
+                        
+                        <div class="prompt-simulator">
+                            <div class="sim-task-selector">
+                                <button class="sim-task-btn active" onclick="selectSimTask('summary')">1. Tóm tắt tài liệu học thuật</button>
+                                <button class="sim-task-btn" onclick="selectSimTask('concept')">2. Giải nghĩa khái niệm phức tạp</button>
+                                <button class="sim-task-btn" onclick="selectSimTask('questions')">3. Tạo câu hỏi ôn tập tự học</button>
+                            </div>
+                            <div class="sim-level-selector">
+                                <button class="sim-level-btn active" onclick="selectSimLevel('basic')">Prompt 1: Cơ bản</button>
+                                <button class="sim-level-btn" onclick="selectSimLevel('improved')">Prompt 2: Cải tiến</button>
+                                <button class="sim-level-btn" onclick="selectSimLevel('advanced')">Prompt 3: Nâng cao (Role & Format)</button>
+                            </div>
+                            <div class="sim-output-box">
+                                <div class="sim-prompt-display" id="sim-prompt-text">
+                                    Tóm tắt tài liệu này
+                                </div>
+                                <div class="sim-ai-display" id="sim-ai-text">
+                                    Bài báo này nói về cách con người và xã hội hiểu khái niệm trách nhiệm trong vấn đề biến đổi khí hậu. Tác giả cho rằng biến đổi khí hậu không chỉ là vấn đề khoa học hay môi trường mà còn là vấn đề chính trị; ai phải chịu trách nhiệm và ai có nghĩa vụ hành động.
+                                </div>
+                                <div style="margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.05); font-size:13.5px; color: var(--accent-gold);" id="sim-critique-text">
+                                    <i class="fa-solid fa-circle-info"></i> AI bỏ sót nhiều khái niệm học thuật quan trọng, nội dung hời hợt và thiếu tính thực tiễn cấu trúc [3].
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Bài học rút ra:</h4>
+                        <p>Prompt càng chi tiết, có định hình vai trò (Role-prompting) và cấu trúc đầu ra rõ ràng (Structured prompting) thì AI càng thấu hiểu mục tiêu của người dùng. Tư duy hệ thống của con người chính là chất xúc tác giúp AI khai phá tối đa tiềm năng [3].</p>
+                    </div>
+                `;
+            } else if (taskId === 4) {
+                htmlContent = `
+                    <div class="modal-header">
+                        <span class="modal-tag">Bài Thực Hành 4</span>
+                        <h3 class="modal-title">Ứng Dụng Công Cụ Hợp Tác Trực Tuyến Trong Làm Việc Nhóm</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Mục tiêu bài học:</strong> Trải nghiệm quy trình làm việc nhóm khép kín dựa trên các nền tảng đám mây trực tuyến, vượt qua rào cản địa lý và tối ưu hóa tiến độ cộng tác [3].</p>
+                        
+                        <h4>Bảng mô phỏng tiến trình công việc trực quan (Kanban Trello):</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-hand-pointer"></i> Nhấp vào từng thẻ công việc bên dưới để xem phương pháp và công cụ đồng bộ hóa [3]:</p>
+                        
+                        <div class="kanban-preview">
+                            <div class="kanban-col">
+                                <div class="col-title">To Do (Cần làm)</div>
+                                <div class="kanban-card" onclick="alert('Công cụ: Trello. Giúp phân chia rõ ràng trách nhiệm của từng thành viên, tránh đè chéo nhiệm vụ [3].')" style="border-left-color: #eb5e55;">Tìm kiếm tài liệu & Ý tưởng</div>
+                                <div class="kanban-card" onclick="alert('Công cụ: Teams/Discord. Thảo luận trực tuyến để thống nhất đề cương chi tiết [3].')" style="border-left-color: #eb5e55;">Họp nhóm khởi động dự án</div>
+                            </div>
+                            <div class="kanban-col">
+                                <div class="col-title">Doing (Đang làm)</div>
+                                <div class="kanban-card" onclick="alert('Công cụ: Google Docs. Mọi người cùng biên tập trực tuyến thời gian thực, xem lịch sử sửa đổi để nắm bắt đóng góp [3].')" style="border-left-color: var(--accent-gold);">Soạn thảo & Chỉnh sửa báo cáo</div>
+                                <div class="kanban-card" onclick="alert('Công cụ: Google Drive. Đồng bộ hóa và lưu trữ tài liệu tham khảo chung theo thư mục thống nhất [3].')" style="border-left-color: var(--accent-gold);">Quản lý & Đồng bộ dữ liệu</div>
+                            </div>
+                            <div class="kanban-col">
+                                <div class="col-title">Done (Đã hoàn thành)</div>
+                                <div class="kanban-card" onclick="alert('Công cụ: Google Drive & Google Docs. Định dạng chuẩn hóa văn bản cuối cùng và nộp báo cáo [3].')" style="border-left-color: var(--accent-mint);">Kiểm duyệt & Nộp file báo cáo</div>
+                            </div>
+                        </div>
+
+                        <h4>Khó khăn gặp phải & Giải pháp xử lý từ thực tế:</h4>
+                        <p><strong>Khó khăn 1:</strong> Một số thành viên phản hồi tin nhắn rất chậm trễ làm ảnh hưởng trực tiếp đến nhịp độ công việc chung.<br>
+                        <i class="fa-solid fa-arrow-right" style="color:var(--accent-mint)"></i> <strong>Giải pháp:</strong> Nhóm đã thiết lập thời hạn cứng (deadline) rất rõ ràng cho từng thẻ nhiệm vụ riêng biệt trên Trello [3].</p>
+                        
+                        <p><strong>Khó khăn 2:</strong> Xuất hiện quá nhiều phiên bản tài liệu khác nhau gây nhiễu loạn thông tin khi sửa đổi.<br>
+                        <i class="fa-solid fa-arrow-right" style="color:var(--accent-mint)"></i> <strong>Giải pháp:</strong> Thống nhất chỉ lưu trữ duy nhất trên một thư mục dùng chung của Google Drive, tận dụng tính năng tự động lưu lịch sử sửa đổi của Google Docs [3].</p>
+                        
+                        <p><strong>Khó khăn 3:</strong> Lịch học của các thành viên không đồng nhất, khó sắp xếp thời gian họp nhóm trực tiếp.<br>
+                        <i class="fa-solid fa-arrow-right" style="color:var(--accent-mint)"></i> <strong>Giải pháp:</strong> Thống nhất sử dụng Discord làm kênh liên lạc chính, cập nhật trạng thái thẻ công việc hàng ngày trực tiếp trên Trello [3].</p>
+
+                        <h4>Bài học rút ra:</h4>
+                        <p>Sức mạnh của cộng tác số nằm ở tính minh bạch và sự kỷ luật. Việc ứng dụng linh hoạt Trello để trực quan hóa tiến độ cùng cơ chế lưu trữ tập trung của Drive giúp loại bỏ 90% sự hiểu lầm và thúc đẩy tinh thần chủ động của từng cá nhân [3].</p>
+                    </div>
+                `;
+            } else if (taskId === 5) {
+                htmlContent = `
+                    <div class="modal-header">
+                        <span class="modal-tag">Bài Thực Hành 5</span>
+                        <h3 class="modal-title">Sáng Tạo Nội Dung Đa Phương Tiện Nhờ GenAI</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Mục tiêu bài học:</strong> Thực hành quy trình sáng tạo nội dung đa phương tiện chuyên nghiệp thông qua việc phối hợp nhịp nhàng thế mạnh của nhiều mô hình AI (Văn bản, Hình ảnh, Thiết kế) và thực hiện kiểm chứng chất lượng nghiêm ngặt [3].</p>
+                        
+                        <h4>Minh họa tương tác: Bản phác thảo Infographic Hawaii</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-circle-info"></i> Hãy nhấp vào các tab nội dung bên dưới để trải nghiệm luồng thông tin được tạo ra bởi AI [3]:</p>
+                        
+                        <div class="infographic-mockup">
+                            <div class="mockup-tab-selector">
+                                <button class="mockup-tab-btn active" onclick="selectInfographicTab('food', this)">1. Traditional Food</button>
+                                <button class="mockup-tab-btn" onclick="selectInfographicTab('dance', this)">2. Hula Dance</button>
+                                <button class="mockup-tab-btn" onclick="selectInfographicTab('ocean', this)">3. Ocean Activities</button>
+                            </div>
+                            <div class="explorer-content" id="mockup-display-area" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px;">
+                                <h5 style="color:var(--accent-gold); font-size:16px; margin-bottom:10px;">Traditional Food (Ẩm thực truyền thống)</h5>
+                                <p style="font-size:14px; line-height:1.6; color:var(--text-secondary);">ChatGPT đã đề xuất các đoạn mô tả ngắn gọn và hấp dẫn về các món ăn cốt lõi mang tính linh hồn của Hawaii: <strong>Poke</strong> (salad cá sống thái khối với nước tương và dầu mè), <strong>Poi</strong> (món ăn truyền thống làm từ khoai môn giã nhuyễn), <strong>Kalua Pig</strong> (thịt lợn nướng chậm trong lò đất imu) và <strong>Shave Ice</strong> (đá bào rưới siro hoa quả rực rỡ) [3].</p>
+                            </div>
+                        </div>
+
+                        <h4>Đánh giá ưu nhược điểm của các công cụ AI đã phối hợp:</h4>
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Công cụ AI</th>
+                                    <th>Ưu điểm nổi bật</th>
+                                    <th>Hạn chế còn tồn tại</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ChatGPT</strong></td>
+                                    <td>Tạo nội dung văn bản cực kỳ nhanh chóng, rõ ràng, có cấu trúc mạch lạc và súc tích [3].</td>
+                                    <td>Nội dung đôi khi quá dài hoặc mang tính khái quát, cần tinh chỉnh lại cho gọn gàng [3].</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Google Gemini</strong></td>
+                                    <td>Đề xuất nhiều ý tưởng hình ảnh sáng tạo, gợi ý tông màu nhiệt đới và phong cách thiết kế rất trực quan [3].</td>
+                                    <td>Cung cấp ý tưởng tổng quát, chưa thể ứng dụng hoặc chỉnh sửa ngay lập tức [3].</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Canva AI</strong></td>
+                                    <td>Hỗ trợ thiết kế hiệu quả với nhiều mẫu bố cục đa dạng và dễ tùy chỉnh [3].</td>
+                                    <td>Một số bố cục gợi ý còn đơn điệu, thiếu sáng tạo, bắt buộc phải chỉnh sửa thủ công [3].</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Phân tích khía cạnh Đạo đức khi sử dụng AI:</h4>
+                        <p><strong>Bản quyền:</strong> Cần đảm bảo các biểu tượng và hình ảnh do AI gợi ý hoặc tạo ra không vi phạm quyền sở hữu trí tuệ của các nghệ sĩ thiết kế thực tế [3].<br>
+                        <strong>Tính chính xác:</strong> Tuyệt đối không đưa trực tiếp thông tin từ AI vào sản phẩm mà không qua kiểm chứng thực tế (ví dụ: kiểm tra kỹ tên gọi và nguồn gốc các địa danh của Hawaii) [3].<br>
+                        <strong>Tránh phụ thuộc:</strong> Lạm dụng AI sẽ làm thui chột khả năng tư duy sáng tạo của bản thân. Con người luôn phải chịu trách nhiệm cao nhất đối với chất lượng và tính minh bạch của sản phẩm cuối cùng [3].</p>
+
+                        <h4>Bài học rút ra:</h4>
+                        <p>AI là một cộng sự tuyệt vời giúp tiết kiệm thời gian lên ý tưởng, nhưng vai trò của con người trong việc biên tập, chọn lọc và thổi hồn phong cách cá nhân vào tác phẩm mới là yếu tố quyết định chất lượng nghệ thuật [3].</p>
+                    </div>
+                `;
+            } else if (taskId === 6) {
+                htmlContent = `
+                    <div class="modal-header">
+                        <span class="modal-tag">Bài Thực Hành 6</span>
+                        <h3 class="modal-title">Sử Dụng AI Có Trách Nhiệm Trong Học Thuật</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Mục tiêu bài học:</strong> Nghiên cứu và quán triệt sâu sắc chính sách của Đại học Quốc gia Hà Nội về GenAI, thiết lập bộ nguyên tắc đạo đức cá nhân và thực hành thiết kế bảng hỏi khoa học có sự hỗ trợ của AI một cách minh bạch [3].</p>
+                        
+                        <h4>Chính sách của ĐHQGHN về Trí tuệ nhân tạo:</h4>
+                        <p>Nhà trường khuyến khích đổi mới sáng tạo, coi GenAI (ChatGPT, Gemini, Claude...) là công cụ hỗ trợ nâng cao hiệu suất học tập và cá nhân hóa lộ trình nghiên cứu của sinh viên [3]. Tuy nhiên, <strong>Tính trung thực học thuật là ranh giới tối cao</strong>. AI chỉ được đóng vai trò là "trợ lý", tuyệt đối không phải là "tác giả" [3]. Mọi sản phẩm có sự hỗ trợ của AI đều phải được khai báo rõ ràng [3].</p>
+
+                        <h4>Thực hành Nghiên cứu khoa học: Khảo sát Nghị định 116</h4>
+                        <p>Nhiệm vụ thực hành: Thiết kế bảng hỏi khảo sát định lượng cho đề tài: <em>“Đánh giá phản hồi của sinh viên năm nhất về chính sách hỗ trợ sinh hoạt phí theo Nghị định 116 tại trường Đại học Giáo dục, ĐHQGHN”</em> [3].</p>
+                        
+                        <p><strong>Nhật ký Prompt đã sử dụng tương tác:</strong><br>
+                        - <em>Giai đoạn 1 (Đề cương):</em> “Bạn là một chuyên gia về Phương pháp nghiên cứu khoa học giáo dục. Tôi đang thực hiện đề tài... Hãy thiết kế cho tôi một cấu trúc logic cho chương Tổng quan tài liệu. Yêu cầu chia rõ các nhánh lý thuyết cần làm rõ.” [3]<br>
+                        - <em>Giai đoạn 2 (Bảng hỏi):</em> “Dựa trên khung nghiên cứu trên, hãy thiết kế một bộ câu hỏi khảo sát định lượng gồm 3 phần: (1) Thông tin nền; (2) Thực trạng tiếp cận thông tin và thủ tục nhận hỗ trợ; (3) Mức độ hài lòng và tác động của chính sách đến động lực học tập. Sử dụng thang đo Likert 5 mức độ...” [3]</p>
+
+                        <h4>Minh họa tương tác: Trình mô phỏng thanh lọc câu hỏi (Sự can thiệp của tư duy con người)</h4>
+                        <p style="font-size:13.5px; margin-bottom:10px;"><i class="fa-solid fa-filter"></i> Hãy nhấp vào các nút bên dưới để quan sát cách tôi tinh chỉnh dữ liệu thô từ AI để đưa vào thực tế nghiên cứu [3]:</p>
+                        
+                        <div class="survey-cleanup">
+                            <div class="cleanup-toggle">
+                                <button class="cleanup-btn active" onclick="toggleSurveyView('before', this)">1. Đầu ra thô từ AI (Nhiều lỗi & Ảo giác)</button>
+                                <button class="cleanup-btn" onclick="toggleSurveyView('after', this)">2. Kết quả sau khi con người tinh chỉnh</button>
+                            </div>
+                            <div class="cleanup-content-area" id="survey-compare-text">
+                                <strong>Câu hỏi do AI thiết kế thô (Hallucinated/Trùng lặp):</strong><br>
+                                - 1. Bạn cảm thấy mức hỗ trợ 3,63 triệu đồng/tháng là thỏa đáng không?<br>
+                                - 2. Thủ tục nhận tiền sinh hoạt phí và giấy tờ tại trường diễn ra có nhanh chóng và thuận lợi không? (Câu hỏi phức hợp gây nhiễu dữ liệu)<br>
+                                - 3. Chính sách Nghị định 161 giúp bạn giảm bớt gánh nặng? (Sai hoàn toàn số hiệu Nghị định - Thực tế là Nghị định 116)<br>
+                                - *Danh mục tài liệu đi kèm: Xuất hiện nhiều bài báo ảo do AI tự sáng tạo, không tồn tại trong thực tế học thuật [3].
+                            </div>
+                        </div>
+
+                        <h4>6 Nguyên tắc sử dụng AI có trách nhiệm của tôi:</h4>
+                        <div class="ethics-grid">
+                            <div class="ethics-item">
+                                <div class="ethics-num">01</div>
+                                <strong>Tư duy đi trước, Công cụ theo sau</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Luôn tự động não, phác thảo dàn ý cá nhân trước khi mở bất kỳ ứng dụng AI nào [3].</p>
+                            </div>
+                            <div class="ethics-item">
+                                <div class="ethics-num">02</div>
+                                <strong>Bảo chứng sự thật (Fact-checking)</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Không bao giờ tin 100% vào số liệu hay trích dẫn do AI cung cấp; luôn đối chiếu chéo nguồn uy tín [3].</p>
+                            </div>
+                            <div class="ethics-item">
+                                <div class="ethics-num">03</div>
+                                <strong>Minh bạch tuyệt đối</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Trung thực khai báo rõ ràng mức độ và công cụ AI hỗ trợ trong quá trình hoàn thiện bài tập [3].</p>
+                            </div>
+                            <div class="ethics-item">
+                                <div class="ethics-num">04</div>
+                                <strong>Bảo mật thông tin nội bộ</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Không tải lên các tài liệu nội bộ, thông tin cá nhân của giảng viên/sinh viên lên nền tảng AI công cộng [3].</p>
+                            </div>
+                            <div class="ethics-item">
+                                <div class="ethics-num">05</div>
+                                <strong>Làm chủ đầu ra</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Đầu ra của AI chỉ là nguyên liệu thô; bản thân phải biên tập và đưa bản sắc cá nhân vào sản phẩm [3].</p>
+                            </div>
+                            <div class="ethics-item">
+                                <div class="ethics-num">06</div>
+                                <strong>Tôn trọng bản quyền gốc</strong>
+                                <p style="font-size:13px; margin-top:5px; color:var(--text-secondary);">Chủ động tìm kiếm và trích dẫn trực tiếp các tác giả gốc của lý thuyết thay vì ghi chung chung "theo AI" [3].</p>
+                            </div>
+                        </div>
+
+                        <h4>Bài học rút ra:</h4>
+                        <p>Việc ứng dụng AI một cách liêm chính, minh bạch giúp rút ngắn tối đa thời gian thực hiện các tác vụ lặp đi lặp lại để tập trung trí tuệ vào phân tích chuyên sâu, nâng cao chất lượng nghiên cứu một cách thực chất [3].</p>
+                    </div>
+                `;
             }
+
+            modalContent.innerHTML = htmlContent;
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger initial state rendering for specific interactive elements
+            setTimeout(() => {
+                if (taskId === 1) updateExplorerUI();
+            }, 50);
         }
 
         function closeModal() {
             modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'initial'; // restore scroll
-        }
-
-        // Inner-modal tab switcher for Task 3 Prompt simulator
-        function switchPromptTab(btn, targetId) {
-            // Remove active from all siblings
-            const parent = btn.parentElement;
-            parent.querySelectorAll('.sim-tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Hide all content blocks
-            const container = parent.parentElement;
-            container.querySelectorAll('.sim-content').forEach(c => c.classList.remove('active'));
-            
-            // Show target
-            container.querySelector(`#${targetId}`).classList.add('active');
+            document.body.style.overflow = 'initial';
         }
     </script>
 </body>
